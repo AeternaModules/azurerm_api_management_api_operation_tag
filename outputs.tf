@@ -1,3 +1,7 @@
+output "api_management_api_operation_tags_id" {
+  description = "Map of id values across all api_management_api_operation_tags, keyed the same as var.api_management_api_operation_tags"
+  value       = { for k, v in azurerm_api_management_api_operation_tag.api_management_api_operation_tags : k => v.id }
+}
 output "api_management_api_operation_tags_api_operation_id" {
   description = "Map of api_operation_id values across all api_management_api_operation_tags, keyed the same as var.api_management_api_operation_tags"
   value       = { for k, v in azurerm_api_management_api_operation_tag.api_management_api_operation_tags : k => v.api_operation_id }
